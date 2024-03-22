@@ -1,0 +1,1 @@
+This is Recipe project in Django
