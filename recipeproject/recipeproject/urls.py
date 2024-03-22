@@ -20,5 +20,5 @@ from vege.views import Recipes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recpies/', Recipes, name='recpies')
+    path('recipes/', Recipes, name='recipes'),
 ]
