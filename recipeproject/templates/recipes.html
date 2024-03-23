@@ -35,6 +35,7 @@
             <th scope="col">Recipe Name</th>
             <th scope="col">Recipe Description</th>
             <th scope="col">Recipe Image</th>
+            <th scope="col">Action</th>
             
             
           </tr>
@@ -47,7 +48,21 @@
             <td>{{ recipe.recipe_name }}</td>
             <td>{{ recipe.recipe_description }}</td>
             <td>
-              <img src="/media/{{ recipe.recipe_image }}" style="height: 200px;" ></td>
+              <img src="/media/{{ recipe.recipe_image }}" style="height: 100px;" >
+            </td>
+            <td>
+              <a onclick="confirmDelete('/delete_recipe/{{recipe.id}}/')" class="btn btn-danger">Delete</a>
+
+              <script>
+              function confirmDelete(url) {
+                  if (confirm('Are you sure you want to delete this recipe?')) {
+                      window.location.href = url; // Redirect to the delete URL if confirmed
+                  }
+              }
+              </script>
+
+            </td>
+
           </tr>
 
           {% endfor %}
