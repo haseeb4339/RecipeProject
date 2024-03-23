@@ -4,10 +4,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 
 
 
-
+@login_required(login_url='/login/')
 def Recipes(request):
 
     if request.method == "POST":
@@ -38,7 +39,7 @@ def Recipes(request):
     return render(request, 'recipes.html', context)
 
 
-
+@login_required(login_url='/login/')
 def Update_Recipe(request, id):
     
     queryset = Recipe.objects.get(id=id)
@@ -69,7 +70,7 @@ def Update_Recipe(request, id):
 
     return render(request, 'update.html', context)
 
-
+@login_required(login_url='/login/')
 def Delete_Recipe(request, id):
 
     queryset = Recipe.objects.get(id=id)
@@ -110,7 +111,7 @@ def login_page(request):
     return render(request, 'login.html')
 
 
-
+@login_required(login_url='/login/')
 def logout_page(request):
 
     logout(request)
