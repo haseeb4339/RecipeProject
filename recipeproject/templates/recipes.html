@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1"  class="form-label">Recipe Description</label>
-          <textarea class="form-control"  name="recipe_description" cols="30" rows="10"></textarea>
+          <textarea class="form-control"  name="recipe_description" ></textarea>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Recipe Image</label>
@@ -25,6 +25,35 @@
 
         <button type="submit" class="btn btn-success">Add Recipe</button>
       </form>
+
+      <table class="table table-bordered border-primary">
+
+        <thead>
+          <tr>
+         
+            <th scope="col">#</th>
+            <th scope="col">Recipe Name</th>
+            <th scope="col">Recipe Description</th>
+            <th scope="col">Recipe Image</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for recipe in Recipes %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ recipe.recipe_name }}</td>
+            <td>{{ recipe.recipe_description }}</td>
+            <td>{{ recipe.recipe_image }}</td>
+          </tr>
+
+          {% endfor %}
+          
+        </tbody>
+        
+      </table>
 
 
 </div>

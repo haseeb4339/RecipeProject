@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Recipe
 
 
@@ -20,4 +20,10 @@ def Recipes(request):
 
         )
 
-    return render(request, 'recipes.html')
+        return redirect('/recipes/')
+    
+    queryset = Recipe.objects.all()
+
+    context = {'Recipes': queryset}
+
+    return render(request, 'recipes.html', context)
