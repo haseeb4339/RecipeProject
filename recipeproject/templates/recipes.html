@@ -3,9 +3,14 @@
 
 {% block start %}
 
+<div class="container mt-5">
+
+</div>
+
 <div class="container mt-5" >
 
     <form class="col-6 mx-auto card p-3 shadow-lg" method="POST" enctype="multipart/form-data"> 
+
       {% csrf_token %}
       <h3>Add Recipe</h3>
         <div class="mb-3">
@@ -26,7 +31,25 @@
         <button type="submit" class="btn btn-success">Add Recipe</button>
       </form>
 
-      <table class="table table-bordered border-primary">
+      <div class="mt-5">
+        <div class="mx-auto col-6">
+          <div class="nb3">
+            <form>
+              <label for="exampleInputEmail1" class="form-label">Search Food</label>
+              <input type="text" name="search" class="form-control">
+        
+
+            <div>
+              <button type="submit" class="btn btn-primary">Search</button>
+              
+            </div>  
+            </form>
+        </div>
+
+  
+      </div>
+
+      <table class="table table-bordered border-primary mt-5">
 
         <thead>
           <tr>
