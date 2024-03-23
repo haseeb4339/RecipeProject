@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from vege.views import Recipes, Delete_Recipe, Update_Recipe
+from vege.views import Recipes, Delete_Recipe, Update_Recipe, login_page, register
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -26,6 +26,8 @@ urlpatterns = [
     path('recipes/', Recipes, name='recipes'),
     path('delete_recipe/<id>/', Delete_Recipe, name='delete_recipe'),
     path('update_recipe/<id>/', Update_Recipe, name='update_recipe'),
+    path('login/', login_page, name='login'),
+    path('register/', register, name='register'),
 ]
 
 if settings.DEBUG:

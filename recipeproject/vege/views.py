@@ -71,3 +71,12 @@ def Delete_Recipe(request, id):
     queryset.delete()
 
     return redirect('/recipes/')
+
+
+def login_page(request):
+    return render(request, 'login.html')
+
+
+
+def register(request):
+    return render(request, 'register.html')
