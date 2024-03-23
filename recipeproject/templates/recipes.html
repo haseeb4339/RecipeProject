@@ -51,7 +51,8 @@
               <img src="/media/{{ recipe.recipe_image }}" style="height: 100px;" >
             </td>
             <td>
-              <a onclick="confirmDelete('/delete_recipe/{{recipe.id}}/')" class="btn btn-danger">Delete</a>
+              <a onclick="confirmDelete('/delete_recipe/{{recipe.id}}/')" class="btn btn-danger m-2">Delete</a>
+              <a onclick="confirmUpdate('/update_recipe/{{recipe.id}}/')" class="btn btn-success">Update</a>
 
               <script>
               function confirmDelete(url) {
@@ -60,6 +61,14 @@
                   }
               }
               </script>
+
+              <script>
+                function confirmUpdate(url) {
+                    if (confirm('Are you sure you want to update this recipe?')) {
+                        window.location.href = url; // Redirect to the update URL if confirmed
+                    }
+                }
+                </script>
 
             </td>
 
